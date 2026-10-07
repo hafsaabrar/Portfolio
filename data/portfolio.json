@@ -1,1 +1,111 @@
-{"name":"Chetan","headerTaglineOne":"Hello 👋","headerTaglineTwo":"I'm Chetan Verma - curious","headerTaglineThree":"designer and devloper","headerTaglineFour":" based in New Delhi, India.","showCursor":true,"showBlog":true,"darkMode":true,"showResume":true,"socials":[{"id":"1","title":"Github","link":"https://github.com/chetanverma16"},{"id":"2","title":"LinkedIn","link":"https://www.linkedin.com/in/chetanverma7/"},{"id":"3","title":"Twitter","link":"https://twitter.com/realchetanverma"},{"id":"4","title":"Blog","link":"https://blog.chetanverma.com/"},{"id":"5","title":"Email","link":"mailto:hello@chetanverma.com"}],"projects":[{"id":"1","title":"Project One Test","description":"Web Design","imageSrc":"https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"2","title":"Project Two","description":"Web Development","imageSrc":"https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"3","title":"Project Three","description":"Design","imageSrc":"https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"4","title":"Project Four","description":"Marketing","imageSrc":"https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"5","title":"Project Five","description":"Development","imageSrc":"https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"6","title":"Project Six","description":"Design & Development","imageSrc":"https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"}],"services":[{"id":"1","title":"Art Direction","description":"We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."},{"id":"2","title":"Branding","description":"We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."},{"id":"3","title":"Web Design","description":"We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."},{"id":"4","title":"3D Design","description":"We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."}],"aboutpara":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.","resume":{"tagline":"👋  I'm a software engineer, product designer.","description":"I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.","experiences":[{"id":"1","dates":"March 2022 - Present","type":"Full Time","position":"Frontend Engineer at X","bullets":"Bullet One, Bullet Two"},{"id":"d495c23b-4f65-479a-9b8a-cfbc1c089725","dates":"July 2020 - March 2022","type":"Full Time","position":"Frontend Engineer at X","bullets":"Worked on the frontend of a React application, Worked on the frontend of a React application"}],"education":{"universityName":"University X","universityDate":"2016-2020","universityPara":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"},"languages":["Javascript","HTML5","CSS","Python","Go"],"frameworks":["React","Typescript","NodeJs"],"others":["Figma","AdobeXD","AWS"]}}
+{
+  "name": "Hafsa Bint E Abrar",
+  "headerTaglineOne": "Frontend Web Developer",
+  "headerTaglineTwo": "I build responsive, modern,",
+  "headerTaglineThree": "and interactive web applications",
+  "headerTaglineFour": " using React & JavaScript.",
+  "showCursor": true,
+  "showBlog": false,
+  "darkMode": true,
+  "showResume": true,
+  "socials": [
+    {
+      "id": "1",
+      "title": "Github",
+      "link": "https://github.com/hafsaabrar56-5331"
+    },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "link": "https://www.linkedin.com"
+    },
+    {
+      "id": "3",
+      "title": "Email",
+      "link": "mailto:hafsaabrar56@gmail.com"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Weather Dashboard",
+      "description": "Real-time weather application built with React, fetching live temperature, humidity, and forecast details.",
+      "imageSrc": "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=600&q=80",
+      "url": "https://weather-hub-hafsa.netlify.app"
+    },
+    {
+      "id": "2",
+      "title": "Movie Search App",
+      "description": "Search engine for movies featuring dynamic search, ratings, and overview details using external APIs.",
+      "imageSrc": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80",
+      "url": "https://user-directory-4vgwpt5q4-hafsa-b8fd.vercel.app"
+    },
+    {
+      "id": "3",
+      "title": "Mini E-Commerce Store",
+      "description": "Luxury online store web app featuring product catalog, cart management, and full checkout UI flow.",
+      "imageSrc": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=600&q=80",
+      "url": "https://aura-store-hafsa.netlify.app"
+    },
+    {
+      "id": "4",
+      "title": "Expense Tracker",
+      "description": "Financial tracker app to calculate income, log daily expenses, and manage budgets with real-time balance calculations.",
+      "imageSrc": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
+      "url": "https://expensify-hafsa.netlify.app"
+    },
+    {
+      "id": "5",
+      "title": "Notes App",
+      "description": "Clean productivity application for creating, editing, and organizing notes with local storage persistence.",
+      "imageSrc": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80",
+      "url": "https://noteflow-hafsa.netlify.app"
+    },
+    {
+      "id": "6",
+      "title": "React Todo App",
+      "description": "Interactive task management app with status filters showcasing state management in React.",
+      "imageSrc": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=600&q=80",
+      "url": "https://task-flow-hafsa.netlify.app"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Frontend Web Development",
+      "description": "Creating clean, responsive, and cross-browser compatible single-page web applications using modern web technologies."
+    },
+    {
+      "id": "2",
+      "title": "React Application Development",
+      "description": "Building interactive user interfaces using React.js, React Hooks, React Router, and state management techniques."
+    },
+    {
+      "id": "3",
+      "title": "UI/UX & Mobile Responsiveness",
+      "description": "Designing and developing mobile-first, user-friendly UI layouts using CSS, Bootstrap, and styled-components."
+    }
+  ],
+  "aboutpara": "I am a passionate Frontend Web Developer specializing in building modern, responsive, and dynamic web applications. With a solid foundation in HTML, CSS, JavaScript, and React.js, I love translating creative designs into functional digital experiences.",
+  "resume": {
+    "tagline": "👋 I'm a Frontend Web Developer.",
+    "description": "Dedicated to crafting clean code and interactive web experiences using HTML, CSS, JavaScript, Bootstrap, and React.js.",
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "2026 - Present",
+        "type": "Freelance",
+        "position": "Frontend Developer",
+        "bullets": "Building responsive client websites and custom web applications using React.js, HTML5, CSS3, and JavaScript."
+      }
+    ],
+    "education": {
+      "universityName": "Self-Directed Software & Frontend Development",
+      "universityDate": "2025 - Present",
+      "universityPara": "Focused intensive learning and practical project building in core JavaScript, asynchronous programming, React hooks, routing, and modern UI frameworks."
+    },
+    "languages": ["JavaScript (ES6+)", "HTML5", "CSS3"],
+    "frameworks": ["React.js", "Bootstrap", "styled-components"],
+    "others": ["Git", "GitHub", "Netlify", "Vercel", "VS Code"]
+  }
+}

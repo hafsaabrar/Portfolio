@@ -30,7 +30,7 @@ const Edit = () => {
 
   // Project Handler
   const editProjects = (projectIndex, editProject) => {
-    let copyProjects = data.projects;
+    let copyProjects = [...data.projects];
     copyProjects[projectIndex] = { ...editProject };
     setData({ ...data, projects: copyProjects });
   };
@@ -46,7 +46,6 @@ const Edit = () => {
           description: "Web Design & Development",
           imageSrc:
             "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-
           url: "http://chetanverma.com/",
         },
       ],
@@ -54,15 +53,13 @@ const Edit = () => {
   };
 
   const deleteProject = (id) => {
-    const copyProjects = data.projects;
-    copyProjects = copyProjects.filter((project) => project.id !== id);
+    const copyProjects = data.projects.filter((project) => project.id !== id);
     setData({ ...data, projects: copyProjects });
   };
 
   // Services Handler
-
   const editServices = (serviceIndex, editService) => {
-    let copyServices = data.services;
+    let copyServices = [...data.services];
     copyServices[serviceIndex] = { ...editService };
     setData({ ...data, services: copyServices });
   };
@@ -76,22 +73,20 @@ const Edit = () => {
           id: uuidv4(),
           title: "New Service",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         },
       ],
     });
   };
 
   const deleteService = (id) => {
-    const copyServices = data.services;
-    copyServices = copyServices.filter((service) => service.id !== id);
+    const copyServices = data.services.filter((service) => service.id !== id);
     setData({ ...data, services: copyServices });
   };
 
   // Socials Handler
-
   const editSocials = (socialIndex, editSocial) => {
-    let copySocials = data.socials;
+    let copySocials = [...data.socials];
     copySocials[socialIndex] = { ...editSocial };
     setData({ ...data, socials: copySocials });
   };
@@ -111,13 +106,11 @@ const Edit = () => {
   };
 
   const deleteSocials = (id) => {
-    const copySocials = data.socials;
-    copySocials = copySocials.filter((social) => social.id !== id);
+    const copySocials = data.socials.filter((social) => social.id !== id);
     setData({ ...data, socials: copySocials });
   };
 
   // Resume
-
   const handleAddExperiences = () => {
     setData({
       ...data,
@@ -138,7 +131,7 @@ const Edit = () => {
   };
 
   const handleEditExperiences = (index, editExperience) => {
-    let copyExperiences = data.resume.experiences;
+    let copyExperiences = [...data.resume.experiences];
     copyExperiences[index] = { ...editExperience };
     setData({
       ...data,
@@ -147,7 +140,7 @@ const Edit = () => {
   };
 
   return (
-    <div className={`container mx-auto ${data.showCursor && "cursor-none"}`}>
+    <div className={` max-w-5xl mx-auto px-10 ${data.showCursor && "cursor-none"}`}>
       <Header isBlog></Header>
       {data.showCursor && <Cursor />}
       <div className="mt-10">
@@ -498,48 +491,46 @@ const Edit = () => {
         {currentTabs === "SOCIAL" && (
           <div className="mt-10">
             {data.socials.map((social, index) => (
-              <>
-                <div key={social.id}>
-                  <div className="flex items-center justify-between">
-                    <h1 className="text-2xl">{social.title}</h1>
-                    <Button
-                      onClick={() => deleteSocials(social.id)}
-                      type="primary"
-                    >
-                      Delete
-                    </Button>
-                  </div>
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">Title</label>
-                    <input
-                      value={social.title}
-                      onChange={(e) =>
-                        editSocials(index, {
-                          ...social,
-                          title: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">Link</label>
-                    <input
-                      value={social.link}
-                      onChange={(e) =>
-                        editSocials(index, {
-                          ...social,
-                          link: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    />
-                  </div>
-                  <hr className="my-10"></hr>
+              <div key={social.id}>
+                <div className="flex items-center justify-between">
+                  <h1 className="text-2xl">{social.title}</h1>
+                  <Button
+                    onClick={() => deleteSocials(social.id)}
+                    type="primary"
+                  >
+                    Delete
+                  </Button>
                 </div>
-              </>
+                <div className="flex items-center mt-5">
+                  <label className="w-1/5 text-lg opacity-50">Title</label>
+                  <input
+                    value={social.title}
+                    onChange={(e) =>
+                      editSocials(index, {
+                        ...social,
+                        title: e.target.value,
+                      })
+                    }
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                  ></input>
+                </div>
+                <div className="flex items-center mt-5">
+                  <label className="w-1/5 text-lg opacity-50">Link</label>
+                  <input
+                    value={social.link}
+                    onChange={(e) =>
+                      editSocials(index, {
+                        ...social,
+                        link: e.target.value,
+                      })
+                    }
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                  />
+                </div>
+                <hr className="my-10"></hr>
+              </div>
             ))}
             <div className="my-10">
               <Button onClick={addSocials} type="primary">
@@ -586,12 +577,7 @@ const Edit = () => {
                 <div className="mt-5" key={experiences.id}>
                   <div className="flex items-center justify-between">
                     <h1 className="text-2xl">{experiences.position}</h1>
-                    <Button
-                      // onClick={() => deleteProject(project.id)}
-                      type="primary"
-                    >
-                      Delete
-                    </Button>
+                    <Button type="primary">Delete</Button>
                   </div>
 
                   <div className="flex items-center mt-5">
@@ -731,7 +717,7 @@ const Edit = () => {
                 <label className="w-1/5 text-lg opacity-50">Languages</label>
                 <div className="w-4/5 ml-10 flex flex-col">
                   {data.resume.languages.map((language, index) => (
-                    <div key={index} className="flex">
+                    <div key={index} className="flex mb-2">
                       <input
                         value={language}
                         onChange={(e) => {
@@ -769,7 +755,7 @@ const Edit = () => {
                   ))}
                   <Button
                     type="primary"
-                    classes="hover:scale-100"
+                    classes="hover:scale-100 mt-2"
                     onClick={() =>
                       setData({
                         ...data,
@@ -789,7 +775,7 @@ const Edit = () => {
                 <label className="w-1/5 text-lg opacity-50">Frameworks</label>
                 <div className="w-4/5 ml-10 flex flex-col">
                   {data.resume.frameworks.map((framework, index) => (
-                    <div key={index} className="flex">
+                    <div key={index} className="flex mb-2">
                       <input
                         value={framework}
                         onChange={(e) => {
@@ -836,7 +822,7 @@ const Edit = () => {
                       })
                     }
                     type="primary"
-                    classes="hover:scale-100"
+                    classes="hover:scale-100 mt-2"
                   >
                     Add +
                   </Button>
@@ -847,7 +833,7 @@ const Edit = () => {
                 <label className="w-1/5 text-lg opacity-50">Others</label>
                 <div className="w-4/5 ml-10 flex flex-col">
                   {data.resume.others.map((other, index) => (
-                    <div key={index} className="flex">
+                    <div key={index} className="flex mb-2">
                       <input
                         value={other}
                         onChange={(e) => {
@@ -894,7 +880,7 @@ const Edit = () => {
                       })
                     }
                     type="primary"
-                    classes="hover:scale-100"
+                    classes="hover:scale-100 mt-2"
                   >
                     Add +
                   </Button>
