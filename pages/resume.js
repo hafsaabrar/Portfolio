@@ -16,16 +16,34 @@ const Resume = () => {
   const theme = useTheme();
   const [mount, setMount] = useState(false);
 
+  // Handling Scroll for Header
+  const handleWorkScroll = () => {
+    router.push("/").then(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 500, behavior: "smooth" });
+      }, 100);
+    });
+  };
+
+  const handleAboutScroll = () => {
+    router.push("/").then(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 1500, behavior: "smooth" });
+      }, 100);
+    });
+  };
+
   useEffect(() => {
     setMount(true);
     if (!showResume) {
       router.push("/");
     }
   }, []);
+
   return (
     <>
       {process.env.NODE_ENV === "development" && (
-        <div className="fixed bottom-6 right-6">
+        <div className="fixed bottom-6 right-6 z-20">
           <Button onClick={() => router.push("/edit")} type={"primary"}>
             Edit Resume
           </Button>
@@ -33,17 +51,21 @@ const Resume = () => {
       )}
       {data.showCursor && <Cursor />}
       <div
-        className={`container mx-auto mb-10 ${
+        className={`max-w-5xl mx-auto px-6 mb-10 ${
           data.showCursor && "cursor-none"
         }`}
       >
-        <Header isBlog />
+        <Header
+          handleWorkScroll={handleWorkScroll}
+          handleAboutScroll={handleAboutScroll}
+          isBlog
+        />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
             <div
               className={`w-full ${
                 mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
-              } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
+              } max-w-4xl p-10 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
             >
               <h1 className="text-3xl font-bold">{name}</h1>
               <h2 className="text-xl mt-5">{resume.tagline}</h2>

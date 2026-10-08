@@ -16,9 +16,19 @@ const Footer = ({}) => {
             <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl font-bold mt-2">
               TOGETHER
             </h1>
-            <a href="mailto:hafsaabrar58@gmail.com">
-  <Button type="primary">Schedule a call</Button>
-</a>
+            <div className="mt-5">
+              <Button
+                type="primary"
+                onClick={() => {
+                  window.open(
+                    "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20schedule%20a%20call",
+                    "_blank"
+                  );
+                }}
+              >
+                Schedule a call
+              </Button>
+            </div>
             <div className="mt-10">
               <Socials />
             </div>

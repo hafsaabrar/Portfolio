@@ -6,7 +6,7 @@ import Button from "../Button";
 // Local Data
 import data from "../../data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll }) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -17,6 +17,22 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setMounted(true);
   }, []);
 
+  const handleNavigation = (scrollCallback) => {
+    if (router.pathname === "/") {
+      if (typeof scrollCallback === "function") {
+        scrollCallback();
+      }
+    } else {
+      router.push("/").then(() => {
+        if (typeof scrollCallback === "function") {
+          setTimeout(() => {
+            scrollCallback();
+          }, 100);
+        }
+      });
+    }
+  };
+
   return (
     <>
       <Popover className="block tablet:hidden mt-5">
@@ -25,7 +41,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             <div className="flex items-center justify-between p-2 laptop:p-0">
               <h1
                 onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
+                className="font-medium p-2 laptop:p-0 link cursor-pointer"
               >
                 {name}.
               </h1>
@@ -42,7 +58,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       src={`/images/${
                         theme === "dark" ? "moon.svg" : "sun.svg"
                       }`}
-                    ></img>
+                      alt="theme toggle"
+                    />
                   </Button>
                 )}
 
@@ -58,7 +75,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                         ? "cancel.svg"
                         : "cancel-white.svg"
                     }`}
-                  ></img>
+                    alt="menu"
+                  />
                 </Popover.Button>
               </div>
             </div>
@@ -67,53 +85,30 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 theme === "dark" ? "bg-slate-800" : "bg-white"
               } shadow-md rounded-md`}
             >
-              {!isBlog ? (
-                <div className="grid grid-cols-1">
-                  <Button onClick={handleWorkScroll}>Work</Button>
-                  <Button onClick={handleAboutScroll}>About</Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
-                  )}
-                  {showResume && (
-                    <Button
-                      onClick={() =>
-                        window.open("mailto:hello@chetanverma.com")
-                      }
-                    >
-                      Resume
-                    </Button>
-                  )}
-
-                  <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
-                  >
-                    Contact
+              <div className="grid grid-cols-1">
+                <Button onClick={() => router.push("/")}>Home</Button>
+                <Button onClick={() => handleNavigation(handleWorkScroll)}>
+                  Work
+                </Button>
+                <Button onClick={() => handleNavigation(handleAboutScroll)}>
+                  About
+                </Button>
+                {showResume && (
+                  <Button onClick={() => router.push("/resume")}>
+                    Resume
                   </Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1">
-                  <Button onClick={() => router.push("/")} classes="first:ml-1">
-                    Home
-                  </Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
-                  )}
-                  {showResume && (
-                    <Button
-                      onClick={() => router.push("/resume")}
-                      classes="first:ml-1"
-                    >
-                      Resume
-                    </Button>
-                  )}
-
-                  <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
-                  >
-                    Contact
-                  </Button>
-                </div>
-              )}
+                )}
+                <Button
+                  onClick={() => {
+                    window.open(
+                      "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20connect",
+                      "_blank"
+                    );
+                  }}
+                >
+                  Contact
+                </Button>
+              </div>
             </Popover.Panel>
           </>
         )}
@@ -129,67 +124,42 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         >
           {name}.
         </h1>
-        {!isBlog ? (
-          <div className="flex">
-            <Button onClick={handleWorkScroll}>Work</Button>
-            <Button onClick={handleAboutScroll}>About</Button>
-            {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
-            )}
-            {showResume && (
-              <Button
-                onClick={() => router.push("/resume")}
-                classes="first:ml-1"
-              >
-                Resume
-              </Button>
-            )}
-
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
-              Contact
+        <div className="flex items-center">
+          <Button onClick={() => router.push("/")}>Home</Button>
+          <Button onClick={() => handleNavigation(handleWorkScroll)}>
+            Work
+          </Button>
+          <Button onClick={() => handleNavigation(handleAboutScroll)}>
+            About
+          </Button>
+          {showResume && (
+            <Button onClick={() => router.push("/resume")} classes="first:ml-1">
+              Resume
             </Button>
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
-            )}
-          </div>
-        ) : (
-          <div className="flex">
-            <Button onClick={() => router.push("/")}>Home</Button>
-            {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
-            )}
-            {showResume && (
-              <Button
-                onClick={() => router.push("/resume")}
-                classes="first:ml-1"
-              >
-                Resume
-              </Button>
-            )}
+          )}
 
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
-              Contact
+          <Button
+            onClick={() => {
+              window.open(
+                "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20connect",
+                "_blank"
+              );
+            }}
+          >
+            Contact
+          </Button>
+          {mounted && theme && data.darkMode && (
+            <Button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              <img
+                className="h-6"
+                src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
+                alt="theme toggle"
+              />
             </Button>
-
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
-            )}
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   );

@@ -91,6 +91,20 @@ export default function Home() {
             </h1>
           </div>
 
+          <div className="mt-5">
+            <Button
+              type="primary"
+              onClick={() => {
+                window.open(
+                  "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20schedule%20a%20call",
+                  "_blank"
+                );
+              }}
+            >
+              Schedule a call
+            </Button>
+          </div>
+
           <Socials className="mt-2 laptop:mt-5" />
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
