@@ -18,6 +18,7 @@ export default function Home() {
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
+  const contactRef = useRef();
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
@@ -35,6 +36,14 @@ export default function Home() {
   const handleAboutScroll = () => {
     window.scrollTo({
       top: aboutRef.current.offsetTop,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleContactScroll = () => {
+    window.scrollTo({
+      top: contactRef.current.offsetTop,
       left: 0,
       behavior: "smooth",
     });
@@ -62,6 +71,7 @@ export default function Home() {
         <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
+          handleContactScroll={handleContactScroll}
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
@@ -91,7 +101,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="mt-5">
+          <div className="mt-5 flex items-center space-x-4">
             <Button
               type="primary"
               onClick={() => {
@@ -149,6 +159,35 @@ export default function Home() {
             {data.aboutpara}
           </p>
         </div>
+
+        {/* Dedicated Contact Section with Both Buttons */}
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={contactRef}>
+          <h1 className="tablet:m-10 text-2xl text-bold">Contact.</h1>
+          <div className="tablet:m-10 mt-5 flex flex-wrap gap-4">
+            <Button
+              type="primary"
+              onClick={() => {
+                window.open(
+                  "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20schedule%20a%20call",
+                  "_blank"
+                );
+              }}
+            >
+              Schedule a call
+            </Button>
+            <Button
+              onClick={() => {
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=hafsaabrar58@gmail.com",
+                  "_blank"
+                );
+              }}
+            >
+              Email Me
+            </Button>
+          </div>
+        </div>
+
         <Footer />
       </div>
     </div>
