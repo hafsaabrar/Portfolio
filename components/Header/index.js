@@ -117,7 +117,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
                 <Button
                   onClick={() => {
                     window.open(
-                      "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20connect",
+                      "https://mail.google.com/mail/?view=cm&fs=1&to=hafsaabrar58@gmail.com",
                       "_blank"
                     );
                   }}
@@ -157,7 +157,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
           <Button
             onClick={() => {
               window.open(
-                "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20connect",
+                "https://mail.google.com/mail/?view=cm&fs=1&to=hafsaabrar58@gmail.com",
                 "_blank"
               );
             }}
