@@ -101,19 +101,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="mt-5 flex items-center space-x-4">
-            <Button
-              type="primary"
-              onClick={() => {
-                window.open(
-                  "https://wa.me/923365566580?text=Hi,%20I%20want%20to%20schedule%20a%20call",
-                  "_blank"
-                );
-              }}
-            >
-              Schedule a call
-            </Button>
-          </div>
+          {/* Top Schedule a Call button removed per teacher's instruction */}
 
           <Socials className="mt-2 laptop:mt-5" />
         </div>
@@ -160,7 +148,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Dedicated Contact Section with Both Buttons */}
+        {/* Dedicated Contact Section */}
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={contactRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">Contact.</h1>
           <div className="tablet:m-10 mt-5 flex flex-wrap gap-4">
